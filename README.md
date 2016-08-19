@@ -1,7 +1,9 @@
 # StudyForMVP
 ##写在前面##
 又到了周末了，本来这周准备总结一下透明状态栏之类的东西……但是突然群里就吹起了MVP的牛，这让我这个MVC都只有小半桶水的人都不敢说话。但是程序员不会吹牛跟条咸鱼又有什么区别？
+
 ![](http://upload-images.jianshu.io/upload_images/1976147-bc51e70906298050.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 所以我毅然决然的打开了搜索引擎，利用我科学上网的本领搜集了一些MVP相关的文章，不过看完也没啥感觉是真的，果然对于coder来说talk is cheap果断撸code才是正道。好了，日常吹牛、唠嗑(1/1)。
 
 ##1、MVC与MVP##
