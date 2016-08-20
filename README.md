@@ -2,14 +2,14 @@
 ##写在前面##
 又到了周末了，本来这周准备总结一下透明状态栏之类的东西……但是突然群里就吹起了MVP的牛，这让我这个MVC都只有小半桶水的人都不敢说话。但是程序员不会吹牛跟条咸鱼又有什么区别？
 
-![](http://upload-images.jianshu.io/upload_images/1976147-bc51e70906298050.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://github.com/ForgetAll/StudyForMVP/blob/master/gif/%E5%92%B8%E9%B1%BC.jpg)
 
 所以我毅然决然的打开了搜索引擎，利用我科学上网的本领搜集了一些MVP相关的文章，不过看完也没啥感觉是真的，果然对于coder来说talk is cheap果断撸code才是正道。好了，日常吹牛、唠嗑(1/1)。
 
 ##1、MVC与MVP##
 对于Android开发者来说，MVC应该是比较熟悉的。首先我自制一副极简风格的MVC图来做说明。
 
-![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1976147-55cd71d2d9c94227.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![MVC](https://github.com/ForgetAll/StudyForMVP/blob/master/gif/MVC.png)
 
 MVC是一种软件设计典范，用一种业务逻辑、数据、界面分离的方法组织代码。但是在Android中用MVC有一点明显的不足：View层与Controller层难以明确的划分出去。因为在Android中各种布局文件是View层没错，但是各个Activity和Fragment呢？这些东西既像View又像Controller，但我们一般会将其划分为Controller层，对于View层的更新一般都会放在对应的Activity或者Fragment(或者其他)中，而我们所需要做的仅仅是抽取出一个Model来实现MVC。
 
@@ -20,7 +20,7 @@ MVC是一种软件设计典范，用一种业务逻辑、数据、界面分离�
 MVC在Android中看上去不是很标准，那么MVP的出现之后与MVC一对比，相信各个Android开发者都会觉得：
 
 这玩意还不错诶~靠谱！
-![算了不自己画了……](http://upload-images.jianshu.io/upload_images/1976147-bacc810e832c9537.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![算了不自己画了……](https://github.com/ForgetAll/StudyForMVP/blob/master/gif/MVP.png)
 
 从图中可以很明显的看书View层不再和Model层互知，View层和Model层通过Presenter层交互。在这了借用hongyang大神的那句话：之所以MVP会让人感觉耳目一新，是因为这次的跳跃是从并不标准的MVC到MVP的一个转变，减少了Activity的职责，简化了Activity中的代码，将复杂的逻辑代码提取到了Presenter中进行处理。与之对应的好处就是，耦合度更低，更方便的进行测试。
 
@@ -29,7 +29,7 @@ MVC在Android中看上去不是很标准，那么MVP的出现之后与MVC一对�
 
 国际惯例先上目录：
 
-![目录.png](http://upload-images.jianshu.io/upload_images/1976147-9ef8b104bd80f7be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![目录.png](https://github.com/ForgetAll/StudyForMVP/blob/master/gif/dire.png)
 
 我的demo是图片加载的小demo，adapter里的适配器是recyclerview的适配器，ImageBean是图片数据，里面包含了一个Url和一个图片相关的描述。utils里是以前自己以前封装的解析这个接口的工具，Urls里保存的是接口。先把非重点在前面讲了，后面开始介绍一下我写的mvp。
 
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements ImageLoadView {
 }
 ```
 中间还有很多代码，我这里只是抽取出来一部分代码。可以看出在我这个demo里V层和M层的定义简直不废吹灰之力，但是……
-![并没有什么卵用](http://upload-images.jianshu.io/upload_images/1976147-b0f7e456225181b1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![并没有什么卵用](https://github.com/ForgetAll/StudyForMVP/blob/master/gif/useless.jpg)
 
 ###2.2、Presenter###
 Presenter层的逻辑着实让我烧了一会脑子，有些东西就是这样，想通了就很简单，想不通就会很痛苦。如何让M层与V层交互？首先我们需要明确的一点是：获取数据的逻辑在Model层那个实现类里面
@@ -175,12 +175,12 @@ public class ImagePresenterImp implements ImagePresenter,ImageModelImp.OnLoadIma
 说了那么多你可能会有点被绕糊涂了，很简单，用我极简的作图风格来帮你理解，当然了，如果你对于回调还不十分了解的话建议去看我的这篇文章[Android之回调函数](http://www.jianshu.com/p/7ac60e182449)
 
 
-![最终图](http://upload-images.jianshu.io/upload_images/1976147-b45145935c21b820.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![最终图](hhttps://github.com/ForgetAll/StudyForMVP/blob/master/gif/%E6%9C%80%E7%BB%88.png)
 
 
 可能看了以上的图你也不是很明白，没关系，网上资料很多，同时别忘了自己动手！
 对了，放个最终跑起来的样子吧……
-![效果图](http://upload-images.jianshu.io/upload_images/1976147-5a13d3cdc368a479.gif?imageMogr2/auto-orient/strip)
+![效果图](https://github.com/ForgetAll/StudyForMVP/blob/master/gif/GIF1.gif)
 
 对了项目名字写错了，写了MVC……你们懂就好……
 
