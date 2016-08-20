@@ -175,7 +175,7 @@ public class ImagePresenterImp implements ImagePresenter,ImageModelImp.OnLoadIma
 说了那么多你可能会有点被绕糊涂了，很简单，用我极简的作图风格来帮你理解，当然了，如果你对于回调还不十分了解的话建议去看我的这篇文章[Android之回调函数](http://www.jianshu.com/p/7ac60e182449)
 
 
-![最终图](hhttps://github.com/ForgetAll/StudyForMVP/blob/master/gif/%E6%9C%80%E7%BB%88.png)
+![最终图](https://github.com/ForgetAll/StudyForMVP/blob/master/gif/%E6%9C%80%E7%BB%88.png)
 
 
 可能看了以上的图你也不是很明白，没关系，网上资料很多，同时别忘了自己动手！
