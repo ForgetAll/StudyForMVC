@@ -33,4 +33,9 @@ public class ImagePresenterImp implements ImagePresenter,ImageModelImp.OnLoadIma
     public void loadList(int pageIndex) {
         imageModel.LoadImageList(this,pageIndex);
     }
+
+    public void onDestroy(){
+        if(imageLoadView != null)
+            imageLoadView = null;
+    }
 }

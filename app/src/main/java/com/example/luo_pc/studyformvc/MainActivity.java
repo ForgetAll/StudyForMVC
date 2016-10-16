@@ -113,12 +113,13 @@ public class MainActivity extends AppCompatActivity implements ImageLoadView {
             }
         }
     }
-    
+
     @Override
     protected void onDestroy() {
-        imagePresenter = null;
         super.onDestroy();
-        
-
+        ImagePresenterImp p = (ImagePresenterImp) imagePresenter;
+        if (p != null)
+            p.onDestroy();
+        imagePresenter = null;
     }
 }
